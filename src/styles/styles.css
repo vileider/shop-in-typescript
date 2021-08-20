@@ -1,0 +1,562 @@
+.masterProductContainer .settingsMenu .buttonBar .itemButton, .masterProductContainer .settingsMenu .buttonBar .dinnerButton {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 2.5vh;
+  padding: 1.25vh;
+  border-left: 6px solid #000050;
+  background-color: lightcyan;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 9px 18px 5px #000000;
+          box-shadow: 5px 9px 18px 5px #000000;
+  font-size: 1rem;
+}
+
+body {
+  font-size: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1024;
+  height: 1366px;
+}
+
+#root {
+  background-image: linear-gradient(137deg, #48b9df, #54a6c1, #2f1747);
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    max-width: 1024px;
+  }
+  #root {
+    margin: 0 auto;
+    max-width: 1024px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+}
+
+.masterProductContainer {
+  width: 100%;
+}
+
+.masterProductContainer ::-webkit-scrollbar {
+  width: 5px;
+}
+
+.masterProductContainer .settingsMenu {
+  position: relative;
+}
+
+.masterProductContainer .settingsMenu radio {
+  color: blue;
+  border: 1px solid #ccc;
+  margin: 8px 0;
+  padding: 12px 20px;
+}
+
+.masterProductContainer .settingsMenu .buttonBar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 2.5vh;
+}
+
+.masterProductContainer .settingsMenu .itemMenu, .masterProductContainer .settingsMenu .dinnerMenu {
+  background-color: #bceedf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  min-height: 40vh;
+  font-size: 2rem;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addItemMenu, .masterProductContainer .settingsMenu .dinnerMenu .addItemMenu {
+  width: 54vw;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addItemMenu .nameOfAddedProduct input, .masterProductContainer .settingsMenu .dinnerMenu .addItemMenu .nameOfAddedProduct input {
+  width: 10em;
+  height: 1em;
+  font-size: 2rem;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addItemMenu .categoryOfAddedProduct input, .masterProductContainer .settingsMenu .dinnerMenu .addItemMenu .categoryOfAddedProduct input {
+  width: 2em;
+  height: 2em;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addItemMenu .categoryOfAddedProduct .priceOfAddedProduct input, .masterProductContainer .settingsMenu .dinnerMenu .addItemMenu .categoryOfAddedProduct .priceOfAddedProduct input {
+  height: 1em;
+  font-size: 2rem;
+}
+
+.masterProductContainer .settingsMenu .itemMenu button, .masterProductContainer .settingsMenu .dinnerMenu button {
+  font-size: 2rem;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .infoPanel, .masterProductContainer .settingsMenu .dinnerMenu .infoPanel {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  width: 46vw;
+  color: red;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu {
+  width: 100%;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .panelsContainer, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .panelsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .panelsContainer .inputPanel, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .panelsContainer .inputPanel {
+  background-color: burlywood;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .dinnerPickingContainer, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .dinnerPickingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 auto;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel .mainTopicButton, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel .mainTopicButton {
+  background-color: greenyellow;
+  width: 25vw;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel .mainTopicChosenButton, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel .mainTopicChosenButton {
+  background-color: white;
+  width: 25vw;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel img, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .dinnerPickingContainer .dinnerProductCategoryChosingPanel img {
+  width: 100%;
+  height: auto;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .productsOnListObject, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .productsOnListObject {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-y: scroll;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .productsOnListObject img, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .productsOnListObject img {
+  z-index: 3;
+}
+
+.masterProductContainer .settingsMenu .itemMenu .addDinnerMenu .productsOnListObject .productName, .masterProductContainer .settingsMenu .dinnerMenu .addDinnerMenu .productsOnListObject .productName {
+  font-size: 0.5em;
+  top: -4.5vh;
+  position: relative;
+  z-index: 4;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+}
+
+.masterProductContainer .productCategoryChosingPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.masterProductContainer .productCategoryChosingPanel .mainTopicButton {
+  background-color: greenyellow;
+  width: 20vw;
+}
+
+.masterProductContainer .productCategoryChosingPanel .mainTopicChosenButton {
+  background-color: white;
+  width: 20vw;
+}
+
+.masterProductContainer .productCategoryChosingPanel img {
+  width: 100%;
+  height: auto;
+}
+
+.masterProductContainer .productsOnListObject {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-y: scroll;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.masterProductContainer .productsOnListObject div {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.masterProductContainer .productsOnListObject div .productImage {
+  z-index: 2;
+}
+
+.masterProductContainer .productsOnListObject div .productName {
+  font-size: 1em;
+  top: 3%;
+  left: 3px;
+  position: absolute;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: bolder;
+  word-break: break-word;
+}
+
+.masterProductContainer .productsOnListObject div .deleteProductImage {
+  height: 13%;
+  width: auto;
+  position: absolute;
+  z-index: 4;
+  right: 2px;
+  bottom: 4px;
+}
+
+.masterProductContainer .productsOnListObject .normal {
+  position: relative;
+  z-index: 2;
+}
+
+.masterProductContainer .productsOnListObject .normal .productName {
+  position: absolute;
+  font-weight: bold;
+  font-size: 15px;
+  z-index: 5;
+  top: 3%;
+  left: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: bolder;
+  word-break: break-word;
+}
+
+.masterProductContainer .productsOnListObject .preparingComponentAnimation {
+  height: 12vh;
+  width: 12vh;
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.masterProductContainer .productsOnListObject .preparingComponentAnimation img {
+  height: 12vh;
+  border: 0px solid;
+  width: 12vh;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.masterProductContainer .productsOnListObject .fade {
+  -webkit-animation: fade-animation 400ms;
+          animation: fade-animation 400ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  position: relative;
+  z-index: 2;
+}
+
+.masterProductContainer .productsOnListObject .fade .productCounter {
+  position: absolute;
+  font-weight: bold;
+  font-size: 25px;
+  z-index: 3;
+  bottom: 2%;
+  left: 3px;
+}
+
+.masterProductContainer .productsOnListObject .fade .productName {
+  position: absolute;
+  font-weight: bold;
+  font-size: 15px;
+  z-index: 3;
+  top: 3%;
+  left: 3px;
+  word-break: break-word;
+}
+
+@-webkit-keyframes fade-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fade-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.masterProductContainer .productsOnListObject img {
+  width: 12vh;
+  height: 12vh;
+  position: relative;
+  margin: 2px;
+}
+
+.masterProductContainer .basketBackground {
+  margin-top: 2vh;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.masterProductContainer .basketBackground .productsOnBasketClosed {
+  width: -webkit-fill-available;
+  z-index: 2;
+  height: 0;
+  overflow-y: scroll;
+  -webkit-animation: basketHideAnimation 2s;
+          animation: basketHideAnimation 2s;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.masterProductContainer .basketBackground .backgroundproductsOnBasketClosed {
+  position: relatives;
+  z-index: -1;
+  height: 0;
+  width: 100vw;
+  max-width: 1024px;
+}
+
+.masterProductContainer .basketBackground .productsOnBasketHide {
+  width: -webkit-fill-available;
+  z-index: 2;
+  height: 0;
+  overflow-y: scroll;
+  -webkit-animation: basketHideAnimation 1400ms;
+          animation: basketHideAnimation 1400ms;
+  position: absolute;
+  margin-top: 20px;
+}
+
+@-webkit-keyframes basketHideAnimation {
+  from {
+    height: 190px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+@keyframes basketHideAnimation {
+  from {
+    height: 190px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.masterProductContainer .basketBackground .productsOnBasketHide .productContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 14%;
+  margin-right: 20%;
+  margin-top: 0;
+}
+
+.masterProductContainer .basketBackground .backgroundproductsOnBasketHide {
+  position: relative;
+  z-index: -1;
+  height: 0;
+  width: 100vw;
+  max-width: 1024px;
+  -webkit-animation: imageHideAnimation 2s;
+          animation: imageHideAnimation 2s;
+}
+
+@-webkit-keyframes imageHideAnimation {
+  from {
+    height: 225px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+@keyframes imageHideAnimation {
+  from {
+    height: 225px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.masterProductContainer .basketBackground .productsOnBasketObject {
+  width: -webkit-fill-available;
+  z-index: 2;
+  height: 190px;
+  overflow-y: scroll;
+  -webkit-animation: basketRevealAnimation 2200ms;
+          animation: basketRevealAnimation 2200ms;
+  position: absolute;
+  margin-top: 20px;
+}
+
+@-webkit-keyframes basketRevealAnimation {
+  from {
+    height: 0vh;
+  }
+  to {
+    height: 190px;
+  }
+}
+
+@keyframes basketRevealAnimation {
+  from {
+    height: 0vh;
+  }
+  to {
+    height: 190px;
+  }
+}
+
+.masterProductContainer .basketBackground .productsOnBasketObject .productContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 14%;
+  margin-right: 20%;
+  margin-top: 0;
+}
+
+.masterProductContainer .basketBackground .backgroundproductsOnBasketObject {
+  position: relative;
+  z-index: -1;
+  height: 225px;
+  width: 100vw;
+  max-width: 1024px;
+  -webkit-animation: imageRevealAnimation 2s;
+          animation: imageRevealAnimation 2s;
+}
+
+@-webkit-keyframes imageRevealAnimation {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 220px;
+  }
+}
+
+@keyframes imageRevealAnimation {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 220px;
+  }
+}
+
+.basketSummary {
+  border: 1vh solid #792727;
+  text-align: center;
+  z-index: 2;
+}
+/*# sourceMappingURL=styles.css.map */
