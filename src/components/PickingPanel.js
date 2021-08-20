@@ -5,6 +5,7 @@ import { GenerateSetOfItems } from './GenerateSetOfItems';
 import { Dinner } from './dinner';
 import { Basket } from './basket';
 import { ModBar } from './ModBar';
+import AccesToServerPath from '../maintence/AccesToServerPath';
 // let tempdata = require('./vegAndFruitDatabase.json')
 
 const PickingPanel = function () {
@@ -147,12 +148,11 @@ const PickingPanel = function () {
 
             <div className="productsOnListObject">
                 {
-                    //http://localhost:8000/
                     mainButtonContentVisibilityCheck.vegAndFruit &&
                     <>
                         <GenerateSetOfItems liftedChildState={setVegAndFruitTransmitedData}
                             setOfItemData={vegAndFruitTransmitedData}
-                            endpoint={'/vegAndFruit'} />
+                            endpoint={`${AccesToServerPath()}vegAndFruit`} />
                     </>
                 }
                 {
@@ -160,7 +160,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setChemicalTransmitedData}
                             setOfItemData={chemicalTransmitedData}
-                            endpoint={'/chemicals'} />
+                            endpoint={`${AccesToServerPath()}chemicals`} />
                     </>
                 }
                 {
@@ -168,7 +168,7 @@ const PickingPanel = function () {
                     <>
                         <Dinner liftedChildState={setDinnerTransmitedData}
                             setOfItemData={dinnerTransmitedData}
-                            endpoint={'http://localhost:8000/dinners'} />
+                            endpoint={`${AccesToServerPath()}dinners`} />
                     </>
                 }
                 {
@@ -176,7 +176,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setDairyWheatAndEggsTransmitedData}
                             setOfItemData={dairyWheatAndEggsTransmitedData}
-                            endpoint={'/dairyWheatAndEggs'} />
+                            endpoint={`${AccesToServerPath()}dairyWheatAndEggs`} />
                     </>
                 }
                 {
@@ -184,7 +184,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setEverythingElseTransmitedData}
                             setOfItemData={everythingElseTransmitedData}
-                            endpoint={'/everythingElse'} />
+                            endpoint={`${AccesToServerPath()}everythingElse`} />
                     </>
                 }
             </div>

@@ -1,0 +1,32 @@
+[
+  {
+    "product": "penuts",
+    "visibilityOnProductList": true,
+    "price": 1,
+    "count": 0
+  },
+  {
+    "product": "strawberry jam",
+    "visibilityOnProductList": true,
+    "price": "3",
+    "count": 0
+  },
+  {
+    "product": "chicken",
+    "visibilityOnProductList": true,
+    "price": "5",
+    "count": 0
+  },
+  {
+    "product": "flour",
+    "visibilityOnProductList": true,
+    "price": "1",
+    "count": 0
+  },
+  {
+    "product": "lol2",
+    "visibilityOnProductList": true,
+    "price": "22",
+    "count": 0
+  }
+]

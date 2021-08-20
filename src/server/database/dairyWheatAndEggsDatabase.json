@@ -1,0 +1,32 @@
+[
+  {
+    "product": "MozzarellaCheese",
+    "visibilityOnProductList": true,
+    "price": 1,
+    "count": 0
+  },
+  {
+    "product": "yogurt",
+    "visibilityOnProductList": true,
+    "price": 0.2,
+    "count": 0
+  },
+  {
+    "product": "milk",
+    "visibilityOnProductList": true,
+    "price": 0.67,
+    "count": 0
+  },
+  {
+    "product": "eggs",
+    "visibilityOnProductList": true,
+    "price": "3",
+    "count": 0
+  },
+  {
+    "product": "spagetti",
+    "visibilityOnProductList": true,
+    "price": "1",
+    "count": 0
+  }
+]

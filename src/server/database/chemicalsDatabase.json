@@ -1,0 +1,20 @@
+[
+  {
+    "product": "washingPowder",
+    "visibilityOnProductList": true,
+    "price": 2,
+    "count": 0
+  },
+  {
+    "product": "toiletPaper",
+    "visibilityOnProductList": true,
+    "price": 3,
+    "count": 0
+  },
+  {
+    "product": "toiletDetergent",
+    "visibilityOnProductList": true,
+    "price": 2,
+    "count": 0
+  }
+]

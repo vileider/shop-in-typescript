@@ -1,4 +1,3 @@
-import './styles/styles.css';
 import BottomLinks from './components/bottom-links';
 import PickingPanel from './components/PickingPanel';
 

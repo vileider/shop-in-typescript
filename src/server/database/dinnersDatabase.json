@@ -1,0 +1,23 @@
+[
+  {
+    "product": "fruitSalad",
+    "visibilityOnProductList": true,
+    "ingredients": [
+      "grapefruit",
+      "kiwi",
+      "banana",
+      "apple",
+      "pineapple"
+    ],
+    "ingredientsDeveloped": ""
+  },
+  {
+    "product": "egg&orange",
+    "visibilityOnProductList": true,
+    "ingredients": [
+      "orange",
+      "eggs"
+    ],
+    "ingredientsDeveloped": ""
+  }
+]

@@ -1,0 +1,134 @@
+[
+    {
+        "product": "apple",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "banana",
+        "visibilityOnProductList": true,
+        "price": 1,
+        "count": 0
+    },
+    {
+        "product": "potato",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "orange",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "kiwi",
+        "visibilityOnProductList": true,
+        "price": 2,
+        "count": 0
+    },
+    {
+        "product": "grape",
+        "visibilityOnProductList": true,
+        "price": 1.3,
+        "count": 0
+    },
+    {
+        "product": "grapefruit",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "lemon",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "pineapple",
+        "visibilityOnProductList": true,
+        "price": 1,
+        "count": 0
+    },
+    {
+        "product": "carrot",
+        "visibilityOnProductList": true,
+        "price": 0.5,
+        "count": 0
+    },
+    {
+        "product": "tomato",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "courgette",
+        "visibilityOnProductList": true,
+        "price": 1.5,
+        "count": 0
+    },
+    {
+        "product": "ducks",
+        "visibilityOnProductList": true,
+        "price": "123",
+        "count": 0
+    },
+    {
+        "product": "duck3233",
+        "visibilityOnProductList": true,
+        "price": "44",
+        "count": 0
+    },
+    {
+        "product": "ducks22",
+        "visibilityOnProductList": true,
+        "price": "123",
+        "count": 0
+    },
+    {
+        "product": "duck333",
+        "visibilityOnProductList": true,
+        "price": "44",
+        "count": 0
+    },
+    {
+        "product": "ducks33",
+        "visibilityOnProductList": true,
+        "price": "123",
+        "count": 0
+    },
+    {
+        "product": "duck3333",
+        "visibilityOnProductList": true,
+        "price": "44",
+        "count": 0
+    },
+    {
+        "product": "duck666s",
+        "visibilityOnProductList": true,
+        "price": "123",
+        "count": 0
+    },
+    {
+        "product": "duck3343",
+        "visibilityOnProductList": true,
+        "price": "44",
+        "count": 0
+    },
+    {
+        "product": "duck454s",
+        "visibilityOnProductList": true,
+        "price": "123",
+        "count": 0
+    },
+    {
+        "product": "duck33456453",
+        "visibilityOnProductList": true,
+        "price": "44",
+        "count": 0
+    }
+]
