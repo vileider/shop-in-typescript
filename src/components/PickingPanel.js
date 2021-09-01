@@ -5,7 +5,7 @@ import { GenerateSetOfItems } from './GenerateSetOfItems';
 import { Dinner } from './dinner';
 import { Basket } from './basket';
 import { ModBar } from './ModBar';
-import AccesToServerPath from '../maintence/AccesToServerPath';
+import { AccesToServerPath } from '../maintence/AccesToServerPath';
 // let tempdata = require('./vegAndFruitDatabase.json')
 
 const PickingPanel = function () {

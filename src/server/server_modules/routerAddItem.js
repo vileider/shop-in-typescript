@@ -26,6 +26,7 @@ router.post('/', async (request, response) => {
             fs.writeFile(`./database/${databasePath}Database.json`,
                 JSON.stringify(readableDatabase, null, 2),
                 (err) => {
+
                     if (err) throw err;
                     console.log(err)
                 })

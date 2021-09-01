@@ -22,11 +22,5 @@
     "visibilityOnProductList": true,
     "price": "1",
     "count": 0
-  },
-  {
-    "product": "lol2",
-    "visibilityOnProductList": true,
-    "price": "22",
-    "count": 0
   }
 ]

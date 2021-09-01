@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { AccesToServerPath } from '../../maintence/AccesToServerPath';
 
 export const AddItem = function () {
     const [itemMenuState, setItemMenuState] = useState({
@@ -15,16 +16,18 @@ export const AddItem = function () {
     }
     const addItemToDatabase = async () => {
         SetInfoMessage('sending to server')
-        const fetchTask = new Request('addItem',
+        //const fetchTask = new Request('http://localhost:8000/',
+        const resolve = await fetch('http://localhost:8000/addItem',
             {
-                method: 'post',
+                mode: 'cors',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(itemMenuState)
             });
-        await fetch(fetchTask)
-            .then(data => console.log('sending data', data))
+        await fetch(resolve)
+            .then(data => console.log('sending 2data', data))
             .catch((error) => {
                 console.error('Error:', error);
             });
@@ -79,7 +82,7 @@ export const AddItem = function () {
 
                 </div >
                 {(infoMessage !== 'sending to server') &&
-                    <button onTouchStart={() => typedDataValidation()}>ADD</button>}
+                    <button onClick={() => typedDataValidation()}>ADD</button>}
 
             </div>
             <div className='infoPanel'>{infoMessage}</div>

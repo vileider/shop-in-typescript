@@ -6,8 +6,8 @@ const writeFile = util.promisify(fs.writeFile);
 
 const amendItemAtDatabase = async (itemForErase, callback) => {
 
-    const PickDataFromDatabase = (_callback) => {
-        fs.readFile('./database/vegAndFruitDatabase.json',
+    const PickDataFromDatabase = (_callback, databaseName) => {
+        fs.readFile(`./database/${databaseName}Database.json`,
             'utf8',
             async (err, data) => {
                 if (err) throw err;
@@ -55,7 +55,7 @@ const amendItemAtDatabase = async (itemForErase, callback) => {
                 if (fileJson.filter(x => x.product === itemForErase).length > 0) {
                     fileJson = fileJson.filter(x => x.product !== itemForErase);
                     await overwriteDatabase(`${x.databaseFileName}`, fileJson)
-                    PickDataFromDatabase(callback)
+                    PickDataFromDatabase(callback, x.databaseName)
                     console.log(`item: ${itemForErase}, deleted from ${x.databaseName},
                     DB lenght: ${fileJson.length}`);
                 }

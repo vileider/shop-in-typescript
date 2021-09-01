@@ -10,11 +10,8 @@ router.get('/', async (request, response) => {
             if (err) throw err;
             setTimeout(() => {
                 fileJson = JSON.parse(data)
-                //console.log(fileJson)
                 response.json(fileJson)
-
                 console.log('send from entry-point /vegAndfruit')
-
             }, 500);
 
         })

@@ -8,12 +8,16 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const path = require('path');
-//const { table } = require('console');
-app.use(express.static(path.join(__dirname, 'build')))
 
+const AccesToBuildPath = () => {
+    const localBuildpath = true;
+    return localBuildpath ? '../../build' : 'build;'
+}
+//const { table } = require('console');
+app.use(express.static(path.join(__dirname, AccesToBuildPath()
+)))
 
 const PORT = process.env.PORT || 8000;
-
 
 app.use('/vegAndFruit', require('./server_modules/routerVegAndFruit.js'))
 app.use('/dinners', require('./server_modules/routerDinners.js'))
@@ -27,11 +31,7 @@ app.use('/addDinner', require('./server_modules/routerAddDinner.js'))
 app.use('/deleteItem', require('./server_modules/routerDeleteItem.js'))
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
-
-
 app.listen(PORT, () => { console.log('server on port 8000') })
-
-

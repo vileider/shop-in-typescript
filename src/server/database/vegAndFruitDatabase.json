@@ -76,41 +76,5 @@
     "visibilityOnProductList": true,
     "price": "123",
     "count": 0
-  },
-  {
-    "product": "duck3233",
-    "visibilityOnProductList": true,
-    "price": "44",
-    "count": 0
-  },
-  {
-    "product": "ducks22",
-    "visibilityOnProductList": true,
-    "price": "123",
-    "count": 0
-  },
-  {
-    "product": "duck333",
-    "visibilityOnProductList": true,
-    "price": "44",
-    "count": 0
-  },
-  {
-    "product": "ducks33",
-    "visibilityOnProductList": true,
-    "price": "123",
-    "count": 0
-  },
-  {
-    "product": "duck3333",
-    "visibilityOnProductList": true,
-    "price": "44",
-    "count": 0
-  },
-  {
-    "product": "duck666s",
-    "visibilityOnProductList": true,
-    "price": "123",
-    "count": 0
   }
 ]

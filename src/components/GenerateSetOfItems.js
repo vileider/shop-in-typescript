@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/styles.css';
 import gear from '../images/gear.png'
+import { AccesToServerPath } from '../maintence/AccesToServerPath';
 
 export const GenerateSetOfItems = function ({
    liftedChildState,
@@ -48,8 +49,7 @@ export const GenerateSetOfItems = function ({
    }
 
    const removeItemFromDatabase = async (itemName) => {
-      //http://localhost:8000/
-      const resolve = await fetch('/deleteItem',
+      const resolve = await fetch(`${AccesToServerPath()}deleteItem`,
          {
             method: 'POST',
             headers: {
@@ -59,7 +59,8 @@ export const GenerateSetOfItems = function ({
          })
       const data = await resolve.json()
       liftedChildState(data)
-      console.log(`remove item ${itemName}`)
+      console.log(`remove item ${itemName},`)
+
    }
 
    const productListDisplay = (
