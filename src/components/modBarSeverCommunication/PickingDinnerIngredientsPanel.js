@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AccesToServerPath } from '../../maintence/AccesToServerPath';
 import { GenerateSetOfDinnerIngredients } from './GenerateSetOfDinnerIngredients';
 
 export const PickingDinnerIngredientsPanel = function ({ liftedChildState, pickedParentIngredients }) {
@@ -67,7 +68,7 @@ export const PickingDinnerIngredientsPanel = function ({ liftedChildState, picke
                     <GenerateSetOfDinnerIngredients
                         liftedChildState={liftedChildState}
                         pickedParentIngredients={pickedParentIngredients}
-                        endpoint={'vegAndFruit'} />
+                        endpoint={`${AccesToServerPath()}vegAndFruit`} />
                 </>
             }
             {
@@ -76,7 +77,7 @@ export const PickingDinnerIngredientsPanel = function ({ liftedChildState, picke
                     <GenerateSetOfDinnerIngredients
                         liftedChildState={liftedChildState}
                         pickedParentIngredients={pickedParentIngredients}
-                        endpoint={'chemicals'} />
+                        endpoint={`${AccesToServerPath()}chemicals`} />
                 </>
             }
             {
@@ -85,7 +86,7 @@ export const PickingDinnerIngredientsPanel = function ({ liftedChildState, picke
                     <GenerateSetOfDinnerIngredients
                         liftedChildState={liftedChildState}
                         pickedParentIngredients={pickedParentIngredients}
-                        endpoint={'dairyWheatAndEggs'} />
+                        endpoint={`${AccesToServerPath()}dairyWheatAndEggs`} />
                 </>
             }
             {
@@ -94,10 +95,10 @@ export const PickingDinnerIngredientsPanel = function ({ liftedChildState, picke
                     <GenerateSetOfDinnerIngredients
                         liftedChildState={liftedChildState}
                         pickedParentIngredients={pickedParentIngredients}
-                        endpoint={'everythingElse'} />
+                        endpoint={`${AccesToServerPath()}everythingElse`} />
                 </>
             }
         </div></>)
-    return <> { mainTopicPanelSet}</>
+    return <> {mainTopicPanelSet}</>
 }
 

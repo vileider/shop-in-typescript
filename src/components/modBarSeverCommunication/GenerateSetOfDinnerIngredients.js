@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../../styles/styles.css';
 import gear from '../../images/gear.png'
+import { errorHandlerForUrlGenerator } from '../reusableFunctions/ImgGenerator';
 
 export const GenerateSetOfDinnerIngredients = function ({
    liftedChildState,
@@ -26,21 +27,6 @@ export const GenerateSetOfDinnerIngredients = function ({
       ingredientsFromDatabase ?? pullsetOfItemDatabase()
 
    }, [endpoint, ingredientsFromDatabase])
-
-   const imgUrlGenerator = (props) => {
-      return require('../../images/' + props + '.png').default;
-   }
-
-   const errorHandlerForUrlGenerator = (props) => {
-      try {
-         return imgUrlGenerator(props)
-      } catch (e) {
-         if (e.message) {
-            // console.log('there is no image for this:', e.message)
-            return require('../../images/picture-not-found.png').default
-         }
-      }
-   }
 
    const productListDisplay = (
       generatedObjectForDisplay,

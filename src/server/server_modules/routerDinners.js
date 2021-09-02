@@ -11,7 +11,7 @@ router.get('/', async (request, response) => {
                 let fileJson = JSON.parse(data);
                 console.log('send from entry-point /dinnersDatabase')
                 response.json(fileJson)
-            }, 500);
+            }, 0);
 
         })
 })

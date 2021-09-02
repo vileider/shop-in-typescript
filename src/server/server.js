@@ -30,8 +30,8 @@ app.use('/addItem', require('./server_modules/routerAddItem.js'))
 app.use('/addDinner', require('./server_modules/routerAddDinner.js'))
 app.use('/deleteItem', require('./server_modules/routerDeleteItem.js'))
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'build', 'index.html'))
+// })
 
 app.listen(PORT, () => { console.log('server on port 8000') })

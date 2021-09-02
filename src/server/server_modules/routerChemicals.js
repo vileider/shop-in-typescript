@@ -11,7 +11,7 @@ router.get('/', async (request, response) => {
                 let fileJson = JSON.parse(data);
                 console.log('send from entry-point /chemical')
                 response.json(fileJson)
-            }, 1000);
+            }, 0);
 
         })
 })

@@ -5,6 +5,7 @@ import { GenerateSetOfItems } from './GenerateSetOfItems';
 import { Dinner } from './dinner';
 import { Basket } from './basket';
 import { ModBar } from './ModBar';
+import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
 import { AccesToServerPath } from '../maintence/AccesToServerPath';
 // let tempdata = require('./vegAndFruitDatabase.json')
 
@@ -35,17 +36,6 @@ const PickingPanel = function () {
     const [dinnerTransmitedData, setDinnerTransmitedData] = useState()
     const [dairyWheatAndEggsTransmitedData, setDairyWheatAndEggsTransmitedData] = useState()
     const [everythingElseTransmitedData, setEverythingElseTransmitedData] = useState()
-    // const resetServer = () => {
-    //     console.log('i am reseting the server');
-    //     fetch('http://localhost:8000/reset/vAF')
-    //         .then(response => response.text()
-    //             .then(data => console.log(data)))
-    //         .catch(error => console.log(error))
-    // }
-
-    const imgUrlGenerator = (props) => {
-        return require('../images/' + props + '.png').default;
-    }
 
     const mainButtonClick = async (e) => {
 
@@ -56,7 +46,7 @@ const PickingPanel = function () {
             setMainButtonContentVisibilityCheck(mainButtonStateChange(value))
         })
     }
-    //onTouchStart
+
     const mainTopicButton = (imageSource, altName) => {
         if (mainButtonContentVisibilityCheck[altName] === false) {
             return (<div className='mainTopicButton' onClick={(e) => { mainButtonClick(e) }}>
@@ -68,13 +58,6 @@ const PickingPanel = function () {
             </div >)
         }
     }
-    // const mainTopicNoActionButton = (imageSource, altName) => {
-    //     return (
-    //         <div className='mainTopicButton'>
-    //             <img src={imageSource} alt={altName} />
-    //         </div>
-    //     )
-    // }
 
     const dataAvailabilityCheck = () => {
         const sourceArray = [
@@ -129,21 +112,11 @@ const PickingPanel = function () {
         <div className='masterProductContainer'>
             <ModBar />
             <div className="productCategoryChosingPanel">
-
-                {mainTopicButton(imgUrlGenerator('veg-fruit'), 'vegAndFruit')}
-
-
-                {mainTopicButton(imgUrlGenerator('chemicals'), 'chemicals')}
-
-
-                {mainTopicButton(imgUrlGenerator('dinners'), 'dinners')}
-
-
-                {mainTopicButton(imgUrlGenerator('milkAndCheese'), 'dairyWheatAndEggs')}
-
-
-                {mainTopicButton(imgUrlGenerator('everythingElse'), 'everythingElse')}
-
+                {mainTopicButton(errorHandlerForUrlGenerator('veg-fruit'), 'vegAndFruit')}
+                {mainTopicButton(errorHandlerForUrlGenerator('chemicals'), 'chemicals')}
+                {mainTopicButton(errorHandlerForUrlGenerator('dinners'), 'dinners')}
+                {mainTopicButton(errorHandlerForUrlGenerator('milkAndCheese'), 'dairyWheatAndEggs')}
+                {mainTopicButton(errorHandlerForUrlGenerator('everythingElse'), 'everythingElse')}
             </div>
 
             <div className="productsOnListObject">
@@ -194,8 +167,6 @@ const PickingPanel = function () {
         </div>
     </>
     )
-
     return MainTopicPanelSet;
-
 }
 export default PickingPanel;

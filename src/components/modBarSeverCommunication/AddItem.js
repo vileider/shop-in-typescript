@@ -17,7 +17,7 @@ export const AddItem = function () {
     const addItemToDatabase = async () => {
         SetInfoMessage('sending to server')
         //const fetchTask = new Request('http://localhost:8000/',
-        const resolve = await fetch('http://localhost:8000/addItem',
+        const resolve = await fetch(`${AccesToServerPath()}addItem`,
             {
                 mode: 'cors',
                 method: 'POST',

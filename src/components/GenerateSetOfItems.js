@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
+import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
 import '../styles/styles.css';
 import gear from '../images/gear.png'
 import { AccesToServerPath } from '../maintence/AccesToServerPath';
+import { CustomFetch } from './reusableFunctions/CustomFetch';
 
 export const GenerateSetOfItems = function ({
    liftedChildState,
@@ -10,57 +12,21 @@ export const GenerateSetOfItems = function ({
 }) {
    useEffect(() => {
       const pullsetOfItemDatabase = async () => {
-         const fetchTask = new Request(endpoint, {
-            method: 'get',
-            headers: {
-               'Content-Type': 'application/json',
-            }
-         });
-         await fetch(fetchTask)
-            .then(response => response.json())
-            .then(data => liftedChildState(data))
-            .catch((error) => {
-               console.error('Error:', error);
-            });
+         const data = await CustomFetch(endpoint, 'GET')
+         liftedChildState(data)
       }
       setOfItemData ?? pullsetOfItemDatabase()
    }, [liftedChildState, endpoint, setOfItemData])
 
-
-   const imgUrlGenerator = (props) => {
-      return require('../images/' + props + '.png').default;
-   }
-
-   const errorHandlerForUrlGenerator = (props) => {
-      try {
-         return imgUrlGenerator(props)
-      } catch (e) {
-         if (e.message) {
-            //console.log('there is no image for this:', e.message)
-            return require('../images/picture-not-found.png').default
-         }
-      }
-   }
-
    const deleteConfirmation = (itemName) => {
       let x = window.confirm(`Are You sure, You want to delete ${itemName}?`)
       x === true && removeItemFromDatabase(itemName)
-
    }
 
    const removeItemFromDatabase = async (itemName) => {
-      const resolve = await fetch(`${AccesToServerPath()}deleteItem`,
-         {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ itemName: `${itemName}` })
-         })
-      const data = await resolve.json()
+      const data = await CustomFetch(`${AccesToServerPath()}deleteItem`,
+         'POST', { itemName: `${itemName}` })
       liftedChildState(data)
-      console.log(`remove item ${itemName},`)
-
    }
 
    const productListDisplay = (

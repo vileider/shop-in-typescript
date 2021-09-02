@@ -70,11 +70,5 @@
     "visibilityOnProductList": true,
     "price": 1.5,
     "count": 0
-  },
-  {
-    "product": "ducks",
-    "visibilityOnProductList": true,
-    "price": "123",
-    "count": 0
   }
 ]
