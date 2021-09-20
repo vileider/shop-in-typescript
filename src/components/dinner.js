@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import './GenerateSetOfItems.css';
 import gear from '../images/gear.png'
+import { AccesToServerPath } from '../maintence/AccesToServerPath';
+import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
 
 export const Dinner = function ({
     liftedChildState,
@@ -8,7 +10,6 @@ export const Dinner = function ({
     endpoint
 }) {
     useEffect(() => {
-        console.log('endpoint', endpoint);
         const pullsetOfItemDatabase = async () => {
             const fetchTask = new Request(endpoint, {
                 method: 'get',
@@ -27,22 +28,7 @@ export const Dinner = function ({
 
         setOfItemData ?? pullsetOfItemDatabase()
 
-    }, [liftedChildState, endpoint, setOfItemData])
-
-    const imgUrlGenerator = (props) => {
-        return require('../images/' + props + '.png').default;
-    }
-
-    const errorHandlerForUrlGenerator = (props) => {
-        try {
-            return imgUrlGenerator(props)
-        } catch (e) {
-            if (e.message) {
-                console.log('there is no image for this:', e.message)
-                return require('../images/picture-not-found.png').default
-            }
-        }
-    }
+    }, [liftedChildState])// eslint-disable-line react-hooks/exhaustive-deps
 
     const deleteConfirmation = (itemName) => {
         let x = window.confirm(`Are You sure, You want to delete ${itemName}?`)
@@ -51,8 +37,7 @@ export const Dinner = function ({
     }
 
     const removeItemFromDatabase = async (itemName) => {
-        //http://localhost:8000/
-        const resolve = await fetch('http://localhost:8000/deleteItem',
+        const resolve = await fetch(`${AccesToServerPath()}deleteItem`,
             {
                 method: 'POST',
                 headers: {
@@ -73,31 +58,29 @@ export const Dinner = function ({
         readIngredientsDataFromDatabase
     ) => {
         readIngredientsDataFromDatabase = async (demadedItems) => {
-            let filteredDataOnDemand
-            const fetchTask = new Request('machingDinnerData', {
+
+            const fetchTask = new Request(`${AccesToServerPath()}machingDinnerData`, {
                 method: 'post',
                 body: JSON.stringify(demadedItems),
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
-            await fetch(fetchTask)
+            return await fetch(fetchTask)
                 .then(response => response.json())
-                .then(data => filteredDataOnDemand = data)
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-            return filteredDataOnDemand
+
         }
 
         visibilityOfEachListObjectUpdate = async (event, productObject, demandedItems) => {
             const ingredientsFromDatabase =
                 await readIngredientsDataFromDatabase(demandedItems)
-                    .then(value => value)
             liftedChildState((setOfItemData.map(x => {
                 if (x.product === productObject) {
                     x.visibilityOnProductList = false;
-                    x.ingredientsDeveloped = ingredientsFromDatabase.map(x => x);
+                    x.ingredientsDeveloped = ingredientsFromDatabase
                     return x;
                 } else {
                     return x;

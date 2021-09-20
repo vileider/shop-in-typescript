@@ -26,7 +26,7 @@ export const GenerateSetOfDinnerIngredients = function ({
       }
       ingredientsFromDatabase ?? pullsetOfItemDatabase()
 
-   }, [endpoint, ingredientsFromDatabase])
+   }, [ingredientsFromDatabase])// eslint-disable-line react-hooks/exhaustive-deps
 
    const productListDisplay = (
       generatedObjectForDisplay,

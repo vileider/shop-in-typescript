@@ -19,5 +19,43 @@
       "eggs"
     ],
     "ingredientsDeveloped": ""
+  },
+  {
+    "product": "123",
+    "visibilityOnProductList": true,
+    "ingredients": [
+      "apple"
+    ],
+    "ingredientsDeveloped": ""
+  },
+  {
+    "product": "pizza time",
+    "visibilityOnProductList": true,
+    "ingredients": [
+      "tomato",
+      "MozzarellaCheese",
+      "sausuge",
+      "chicken"
+    ],
+    "ingredientsDeveloped": ""
+  },
+  {
+    "product": "pizza",
+    "visibilityOnProductList": true,
+    "ingredients": [
+      "tomato",
+      "MozzarellaCheese",
+      "sausuge"
+    ],
+    "ingredientsDeveloped": ""
+  },
+  {
+    "product": "jabło",
+    "visibilityOnProductList": true,
+    "ingredients": [
+      "apple",
+      "banana"
+    ],
+    "ingredientsDeveloped": ""
   }
 ]

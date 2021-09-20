@@ -10,6 +10,7 @@ import { AccesToServerPath } from '../maintence/AccesToServerPath';
 // let tempdata = require('./vegAndFruitDatabase.json')
 
 const PickingPanel = function () {
+    console.log('zlo')
     const [vegAndFruitTransmitedData, setVegAndFruitTransmitedData] = useState()
     const [mainButtonContentVisibilityCheck,
         setMainButtonContentVisibilityCheck] = useState({
@@ -71,18 +72,23 @@ const PickingPanel = function () {
             .forEach(y => combinedArrays = combinedArrays.concat(y))
 
         if (dinnerTransmitedData) {
+            console.log('dinnerTD to true')
             try {
                 if (combinedArrays.length > 0) {
+                    console.log('lenght > 0')
                     if (vegAndFruitTransmitedData) {
                         const dinnerIngredients = dinnerTransmitedData
                             .map(x => x.ingredientsDeveloped).flat(1)
 
+
                         combinedArrays = combinedArrays.map(x => {
+
                             dinnerIngredients.forEach(y => {
                                 if (x.product === y.product) {
                                     if (y.visibilityOnProductList === false) {
                                         x.count++
                                         y.visibilityOnProductList = true
+
                                     }
                                     x.visibilityOnProductList = false
                                 }
@@ -95,10 +101,23 @@ const PickingPanel = function () {
                         return combinedArrays.flat(1)
                     }
                 }
-                if (combinedArrays.length === 0) {
-                    console.table(dinnerTransmitedData)
-                    dinnerTransmitedData
-                        .map(x => combinedArrays.push(x.ingredientsDeveloped))
+                else {
+                    // if (combinedArrays.length === 0) {
+                    //     dinnerTransmitedData.forEach(x => {
+                    //         x.visibilityOnProductList === false &&
+                    //             combinedArrays.push(x.ingredientsDeveloped)
+                    //     })
+                    //     console.log('equal 0', combinedArrays.length)
+                    // }
+                    // if (combinedArrays.length > 0) {
+                    //     //console.log('array longer than 0')
+                    //     dinnerTransmitedData.forEach(x => {
+
+                    //         //console.table('dd', dinnerTransmitedData)
+                    //     })
+                    // }
+                    //else return 0
+                    //console.table('ca2', combinedArrays.flat(1))
                     return combinedArrays.flat(1)
                 }
             } catch (e) {

@@ -22,5 +22,17 @@
     "visibilityOnProductList": true,
     "price": "1",
     "count": 0
+  },
+  {
+    "product": "nuttela",
+    "visibilityOnProductList": true,
+    "price": "3.5",
+    "count": 0
+  },
+  {
+    "product": "sausuge",
+    "visibilityOnProductList": true,
+    "price": "2.5",
+    "count": 0
   }
 ]

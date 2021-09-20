@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 export const Basket = function (props) {
+    console.log('basket zlo')
     const [basketClassName, setBasketClassName] = useState('productsOnBasketClosed')
+    //const [productsOnBasket, setProductsOnBasket0] = useState()
     const recipeFold = () => {
         (basketClassName === 'productsOnBasketHide')
             ? setBasketClassName('productsOnBasketObject')

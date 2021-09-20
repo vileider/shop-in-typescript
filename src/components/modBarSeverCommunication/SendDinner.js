@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AccesToServerPath } from '../../maintence/AccesToServerPath';
 
 
 export const SendDinner = function ({ dinnerParentName, pickedParentIngredients }) {
@@ -18,7 +19,7 @@ export const SendDinner = function ({ dinnerParentName, pickedParentIngredients 
 
     const sendDinnerToDatabase = async () => {
         setInfoMessage('sending to server')
-        const fetchTask = new Request('addDinner',
+        const fetchTask = new Request(`${AccesToServerPath()}addDinner`,
             {
                 method: 'post',
                 headers: {
@@ -43,7 +44,7 @@ export const SendDinner = function ({ dinnerParentName, pickedParentIngredients 
     return (<>
         {infoMessage}
         {infoMessage !== 'sending to server'
-            && (<button className={'sendToServerButton'} onTouchStart={() => {
+            && (<button className={'sendToServerButton'} onClick={() => {
                 typedDataValidation()
             }}>Add Dinner</button>)
         }
