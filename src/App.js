@@ -7,6 +7,7 @@ import { AccesToServerPath } from './maintence/AccesToServerPath';
 export const ThemeContext = React.createContext()
 
 function App() {
+  console.log('zlo app')
   const loadListEndPoint = [
     'vegAndFruit',
     'chemicals',
@@ -15,21 +16,21 @@ function App() {
     'everythingElse'];
 
   let loadList = [];
+  const [loadListstate, setloadListstate] = useState([])
 
-  // loadListEndPoint.forEach(async x => {
-  //   const data = await CustomFetch(`${AccesToServerPath()}${x}`, 'GET')
-  //   loadList.push(data)
-  // })
+  loadListEndPoint.forEach(async x => {
+    const data = await CustomFetch(`${AccesToServerPath()}${x}`, 'GET')
+    loadList.push(data)
+  })
 
-  const [darkTheme, setDarkTheme] = useState(true)
-  function toggleTheme() {
-    setDarkTheme(prevDarkTheme => !prevDarkTheme)
-  }
+  // function toggleTheme() {
+  //   setDarkTheme(prevDarkTheme => !prevDarkTheme)
+  // }
 
   return (
     <>
       <div className="App">
-        <ThemeContext.Provider value={darkTheme}>
+        <ThemeContext.Provider value={loadList}>
           {/* <button onClick={toggleTheme}>button button</button> */}
           <PickingPanel />
         </ThemeContext.Provider>
