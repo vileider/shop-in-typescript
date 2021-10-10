@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import BottomLinks from './components/bottom-links';
 import PickingPanel from './components/PickingPanel';
-import { loadList } from './components/reusableFunctions/AllFruitsFromDatabase';
-export const ThemeContext = React.createContext()
+import { AllFruitsFromDatabase } from './components/reusableFunctions/AllFruitsFromDatabase';
+export const ProductContext = React.createContext()
 
 
 function App() {
-  const [loadListstate, setloadListstate] = useState(loadList)
-  console.log('zlo app', loadListstate)
+  const [loadListstate, setloadListstate] = useState(AllFruitsFromDatabase())
+
 
   return (
     <>
       <div className="App">
-        <ThemeContext.Provider value={loadListstate}>
-          {/* <button onClick={toggleTheme}>button button</button> */}
+        <ProductContext.Provider value={loadListstate}>
           <PickingPanel />
-        </ThemeContext.Provider>
+        </ProductContext.Provider>
         <BottomLinks />
       </div>
 

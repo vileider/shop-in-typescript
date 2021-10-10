@@ -8,7 +8,11 @@ export const loadListEndPoint = [
     'everythingElse'];
 
 
-export const loadList = loadListEndPoint.map(async x => {
-    const data = await CustomFetch(`${AccesToServerPath()}${x}`, 'GET')
-
-})
+export const AllFruitsFromDatabase = () => {
+    let loadList: Array<string> = [];
+    loadListEndPoint.forEach(async x => {
+        const data = await CustomFetch(`${AccesToServerPath()}${x}`, 'GET')
+        loadList.push(data)
+    })
+    return loadList;
+}
