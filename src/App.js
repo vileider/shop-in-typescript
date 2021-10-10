@@ -1,36 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BottomLinks from './components/bottom-links';
 import PickingPanel from './components/PickingPanel';
-import { CustomFetch } from './components/reusableFunctions/CustomFetch';
-import { AccesToServerPath } from './maintence/AccesToServerPath';
-
+import { loadList } from './components/reusableFunctions/AllFruitsFromDatabase';
 export const ThemeContext = React.createContext()
 
+
 function App() {
-  console.log('zlo app')
-  const loadListEndPoint = [
-    'vegAndFruit',
-    'chemicals',
-    'dinners',
-    'dairyWheatAndEggs',
-    'everythingElse'];
-
-  let loadList = [];
-  const [loadListstate, setloadListstate] = useState([])
-
-  loadListEndPoint.forEach(async x => {
-    const data = await CustomFetch(`${AccesToServerPath()}${x}`, 'GET')
-    loadList.push(data)
-  })
-
-  // function toggleTheme() {
-  //   setDarkTheme(prevDarkTheme => !prevDarkTheme)
-  // }
+  const [loadListstate, setloadListstate] = useState(loadList)
+  console.log('zlo app', loadListstate)
 
   return (
     <>
       <div className="App">
-        <ThemeContext.Provider value={loadList}>
+        <ThemeContext.Provider value={loadListstate}>
           {/* <button onClick={toggleTheme}>button button</button> */}
           <PickingPanel />
         </ThemeContext.Provider>

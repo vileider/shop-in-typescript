@@ -181,7 +181,7 @@ const PickingPanel = function () {
                 }
             </div>
             <>
-                <Basket dataFromParent={dataAvailabilityCheck()} />
+                {/* <Basket dataFromParent={dataAvailabilityCheck()} /> */}
             </>
         </div>
     </>
