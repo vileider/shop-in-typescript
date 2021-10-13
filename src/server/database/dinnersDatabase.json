@@ -21,14 +21,6 @@
     "ingredientsDeveloped": ""
   },
   {
-    "product": "123",
-    "visibilityOnProductList": true,
-    "ingredients": [
-      "apple"
-    ],
-    "ingredientsDeveloped": ""
-  },
-  {
     "product": "pizza time",
     "visibilityOnProductList": true,
     "ingredients": [

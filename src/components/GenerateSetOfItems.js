@@ -3,16 +3,17 @@ import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
 import '../styles/styles.css';
 import { CustomFetch } from './reusableFunctions/CustomFetch';
 import ProductListDisplay from './Generate_items_components/ProductListDisplay';
-import { ProductContext } from '../App';
+import { ProductContext, UpdateContext } from '../App';
 
 export const GenerateSetOfItems = function ({
-   liftedChildState,
+   //liftedChildState,
    setOfItemData,
    endpoint
 }) {
    const productsFromContext = useContext(ProductContext)
+   const liftedChildState = useContext(UpdateContext)
 
-   console.log('generate zlo and.....', productsFromContext[0])
+   console.log('generate zlo and.....', productsFromContext)
    // useEffect(() => {
    //    const pullsetOfItemDatabase = async () => {
    //       const data = await CustomFetch(endpoint, 'GET')
@@ -23,8 +24,8 @@ export const GenerateSetOfItems = function ({
    // }, [liftedChildState])// eslint-disable-line react-hooks/exhaustive-deps
 
 
-   const productListObject = (productsFromContext[0] ?
-      ProductListDisplay(liftedChildState, productsFromContext[0]) : (
+   const productListObject = (productsFromContext ?
+      ProductListDisplay(liftedChildState, productsFromContext) : (
          <div className='productsOnListObject' >
             <div className='preparingComponentAnimation'>
                <img src={errorHandlerForUrlGenerator('gear')} alt='waitning animation' />

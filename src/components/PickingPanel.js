@@ -10,7 +10,7 @@ import { AccesToServerPath } from '../maintence/AccesToServerPath';
 // let tempdata = require('./vegAndFruitDatabase.json')
 
 const PickingPanel = function () {
-    console.log('zlo')
+    console.log('panel zlo')
     const [vegAndFruitTransmitedData, setVegAndFruitTransmitedData] = useState()
     const [mainButtonContentVisibilityCheck,
         setMainButtonContentVisibilityCheck] = useState({
@@ -181,7 +181,7 @@ const PickingPanel = function () {
                 }
             </div>
             <>
-                {/* <Basket dataFromParent={dataAvailabilityCheck()} /> */}
+                <Basket dataFromParent={dataAvailabilityCheck()} />
             </>
         </div>
     </>
