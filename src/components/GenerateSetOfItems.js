@@ -4,6 +4,7 @@ import '../styles/styles.css';
 import { CustomFetch } from './reusableFunctions/CustomFetch';
 import ProductListDisplay from './Generate_items_components/ProductListDisplay';
 import { ProductContext, UpdateContext } from '../App';
+import { GivesNumberOfRequiredList } from './reusableFunctions/GivesListNumber';
 
 export const GenerateSetOfItems = function ({
    //liftedChildState,
@@ -13,7 +14,7 @@ export const GenerateSetOfItems = function ({
    const productsFromContext = useContext(ProductContext)
    const liftedChildState = useContext(UpdateContext)
 
-   console.log('generate zlo and.....', productsFromContext)
+   console.log('generate zlo and.....', endpoint, productsFromContext)
    // useEffect(() => {
    //    const pullsetOfItemDatabase = async () => {
    //       const data = await CustomFetch(endpoint, 'GET')
@@ -24,8 +25,8 @@ export const GenerateSetOfItems = function ({
    // }, [liftedChildState])// eslint-disable-line react-hooks/exhaustive-deps
 
 
-   const productListObject = (productsFromContext ?
-      ProductListDisplay(liftedChildState, productsFromContext) : (
+   const productListObject = (productsFromContext[GivesNumberOfRequiredList(endpoint)] ?
+      ProductListDisplay(liftedChildState, productsFromContext[GivesNumberOfRequiredList(endpoint)]) : (
          <div className='productsOnListObject' >
             <div className='preparingComponentAnimation'>
                <img src={errorHandlerForUrlGenerator('gear')} alt='waitning animation' />

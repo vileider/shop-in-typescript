@@ -46,7 +46,7 @@ export const Dinner = function ({
                 body: JSON.stringify({ itemName: `${itemName}` })
             })
         const data = await resolve.json()
-        console.log(data)
+        console.log('data from dinner', data)
         //liftedChildState(data)
         console.log(`remove item ${itemName}`)
     }

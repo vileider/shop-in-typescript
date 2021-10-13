@@ -7,7 +7,7 @@ import { Basket } from './basket';
 import { ModBar } from './ModBar';
 import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
 import { AccesToServerPath } from '../maintence/AccesToServerPath';
-// let tempdata = require('./vegAndFruitDatabase.json')
+
 
 const PickingPanel = function () {
     console.log('panel zlo')
@@ -144,7 +144,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setVegAndFruitTransmitedData}
                             setOfItemData={vegAndFruitTransmitedData}
-                            endpoint={`${AccesToServerPath()}vegAndFruit`} />
+                            endpoint={`vegAndFruit`} />
                     </>
                 }
                 {
@@ -152,7 +152,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setChemicalTransmitedData}
                             setOfItemData={chemicalTransmitedData}
-                            endpoint={`${AccesToServerPath()}chemicals`} />
+                            endpoint={`chemicals`} />
                     </>
                 }
                 {
@@ -168,7 +168,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setDairyWheatAndEggsTransmitedData}
                             setOfItemData={dairyWheatAndEggsTransmitedData}
-                            endpoint={`${AccesToServerPath()}dairyWheatAndEggs`} />
+                            endpoint={`dairyWheatAndEggs`} />
                     </>
                 }
                 {
@@ -176,7 +176,7 @@ const PickingPanel = function () {
                     <>
                         <GenerateSetOfItems liftedChildState={setEverythingElseTransmitedData}
                             setOfItemData={everythingElseTransmitedData}
-                            endpoint={`${AccesToServerPath()}everythingElse`} />
+                            endpoint={`everythingElse`} />
                     </>
                 }
             </div>
