@@ -1,34 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import './GenerateSetOfItems.css';
 import gear from '../images/gear.png'
 import { AccesToServerPath } from '../maintence/AccesToServerPath';
 import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
+import { ProductContext, UpdateContext } from '../App';
+import { GivesNumberOfRequiredList } from './reusableFunctions/GivesListNumber';
 
-export const Dinner = function ({
-    liftedChildState,
-    setOfItemData,
-    endpoint
-}) {
-    useEffect(() => {
-        const pullsetOfItemDatabase = async () => {
-            const fetchTask = new Request(endpoint, {
-                method: 'get',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
-            await fetch(fetchTask)
-                .then(response => response.json())
-                .then(data => liftedChildState(data))
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
 
-        }
+export const Dinner = function ({ endpoint }) {
 
-        setOfItemData ?? pullsetOfItemDatabase()
-
-    }, [liftedChildState])// eslint-disable-line react-hooks/exhaustive-deps
+    const productsFromContext = useContext(ProductContext)
+    const liftedChildState = useContext(UpdateContext)
 
     const deleteConfirmation = (itemName) => {
         let x = window.confirm(`Are You sure, You want to delete ${itemName}?`)
@@ -77,7 +59,7 @@ export const Dinner = function ({
         visibilityOfEachListObjectUpdate = async (event, productObject, demandedItems) => {
             const ingredientsFromDatabase =
                 await readIngredientsDataFromDatabase(demandedItems)
-            liftedChildState((setOfItemData.map(x => {
+            liftedChildState((productsFromContext[GivesNumberOfRequiredList(endpoint)].map(x => {
                 if (x.product === productObject) {
                     x.visibilityOnProductList = false;
                     x.ingredientsDeveloped = ingredientsFromDatabase
@@ -89,7 +71,7 @@ export const Dinner = function ({
         }
 
         generatedObjectForDisplay =
-            setOfItemData.filter(x => {
+            productsFromContext[GivesNumberOfRequiredList(endpoint)].filter(x => {
                 return x.visibilityOnProductList === true;
             }).map(x => (<div key={x.product}
                 className={'product-section-' + x.product}
@@ -109,7 +91,7 @@ export const Dinner = function ({
 
     }
 
-    const productListObject = (setOfItemData ?
+    const productListObject = (productsFromContext[GivesNumberOfRequiredList(endpoint)] ?
         productListDisplay() : (<div className='productOnListObject' >
             <div className='preparingComponentAnimation'>
                 <img src={gear} alt='waitning animation' />

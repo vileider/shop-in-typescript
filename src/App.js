@@ -18,8 +18,8 @@ function App() {
   return (
     <>
       <div className="App">
-        <button onClick={() => { console.log(loadListstate) }}>123</button>
-        <button onClick={() => { console.log('sss') }}>1333</button>
+        {/* <button onClick={() => { console.log(loadListstate) }}>123</button>
+        <button onClick={() => { console.log('sss') }}>1333</button> */}
         <ProductContext.Provider value={loadListstate}>
           <UpdateContext.Provider value={update}>
             <PickingPanel />

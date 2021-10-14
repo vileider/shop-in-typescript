@@ -160,7 +160,7 @@ const PickingPanel = function () {
                     <>
                         <Dinner liftedChildState={setDinnerTransmitedData}
                             setOfItemData={dinnerTransmitedData}
-                            endpoint={`${AccesToServerPath()}dinners`} />
+                            endpoint={`dinners`} />
                     </>
                 }
                 {
