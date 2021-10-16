@@ -3,17 +3,17 @@
 export const GivesNumberOfRequiredList = (endpointName: string) => {
     switch (endpointName) {
         case 'vegAndFruit':
-            return '0'
+            return 0
         case 'chemicals':
-            return '1'
+            return 1
         case 'dinners':
-            return '2'
+            return 2
         case 'dairyWheatAndEggs':
-            return '3'
+            return 3
         case 'everythingElse':
-            return '4'
+            return 4
         default:
-            console.log('error')
+            return 0
     }
 
 }

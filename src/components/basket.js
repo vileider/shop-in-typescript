@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { ProductContext } from '../App';
+
 export const Basket = function (props) {
+    const productsFromContext = useContext(ProductContext).flat(1)
     console.log('basket zlo')
     const [basketClassName, setBasketClassName] = useState('productsOnBasketClosed')
     //const [productsOnBasket, setProductsOnBasket0] = useState()
+    useEffect(() => {
+        console.log('use effect')
+    }, [productsFromContext])
     const recipeFold = () => {
         (basketClassName === 'productsOnBasketHide')
             ? setBasketClassName('productsOnBasketObject')
@@ -15,7 +21,7 @@ export const Basket = function (props) {
     const basketListDisplay = () => {
         try {
             // console.log('basket, data from parent', props.dataFromParent)
-            return props.dataFromParent.filter(x => {
+            return productsFromContext.filter(x => {
                 return x.visibilityOnProductList === false;
             }).map(x => (<div className="productContainer" key={x.product}>
                 <div className='productName'

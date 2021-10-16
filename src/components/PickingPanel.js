@@ -1,16 +1,18 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import '../styles/styles.css';
 import { GenerateSetOfItems } from './GenerateSetOfItems';
 import { Dinner } from './dinner';
 import { Basket } from './basket';
 import { ModBar } from './ModBar';
 import { errorHandlerForUrlGenerator } from './reusableFunctions/ImgGenerator';
-import { AccesToServerPath } from '../maintence/AccesToServerPath';
-
+import { ProductContext } from '../App';
 
 const PickingPanel = function () {
-    console.log('panel zlo')
+    const productsFromContext = useContext(ProductContext).flat(1)
+    // const productsFromContextFlat = productsFromContext
+
+    console.log('panel zlo', productsFromContext)
     const [vegAndFruitTransmitedData, setVegAndFruitTransmitedData] = useState()
     const [mainButtonContentVisibilityCheck,
         setMainButtonContentVisibilityCheck] = useState({
@@ -61,16 +63,8 @@ const PickingPanel = function () {
     }
 
     const dataAvailabilityCheck = () => {
-        const sourceArray = [
-            vegAndFruitTransmitedData,
-            chemicalTransmitedData,
-            dairyWheatAndEggsTransmitedData,
-            everythingElseTransmitedData
-        ]
-        let combinedArrays = []
-        sourceArray.filter(x => Array.isArray(x))
-            .forEach(y => combinedArrays = combinedArrays.concat(y))
 
+        let combinedArrays = productsFromContext
         if (dinnerTransmitedData) {
             console.log('dinnerTD to true')
             try {
@@ -102,22 +96,22 @@ const PickingPanel = function () {
                     }
                 }
                 else {
-                    // if (combinedArrays.length === 0) {
-                    //     dinnerTransmitedData.forEach(x => {
-                    //         x.visibilityOnProductList === false &&
-                    //             combinedArrays.push(x.ingredientsDeveloped)
-                    //     })
-                    //     console.log('equal 0', combinedArrays.length)
-                    // }
-                    // if (combinedArrays.length > 0) {
-                    //     //console.log('array longer than 0')
-                    //     dinnerTransmitedData.forEach(x => {
+                    if (combinedArrays.length === 0) {
+                        dinnerTransmitedData.forEach(x => {
+                            x.visibilityOnProductList === false &&
+                                combinedArrays.push(x.ingredientsDeveloped)
+                        })
+                        console.log('equal 0', combinedArrays.length)
+                    }
+                    if (combinedArrays.length > 0) {
+                        //console.log('array longer than 0')
+                        dinnerTransmitedData.forEach(x => {
 
-                    //         //console.table('dd', dinnerTransmitedData)
-                    //     })
-                    // }
-                    //else return 0
-                    //console.table('ca2', combinedArrays.flat(1))
+                            //console.table('dd', dinnerTransmitedData)
+                        })
+                    }
+                    else return 0
+                    console.table('ca2', combinedArrays.flat(1))
                     return combinedArrays.flat(1)
                 }
             } catch (e) {
@@ -158,7 +152,7 @@ const PickingPanel = function () {
                 {
                     mainButtonContentVisibilityCheck.dinners &&
                     <>
-                        <Dinner liftedChildState={setDinnerTransmitedData}
+                        <Dinner liftedDinnerChildState={setDinnerTransmitedData}
                             setOfItemData={dinnerTransmitedData}
                             endpoint={`dinners`} />
                     </>

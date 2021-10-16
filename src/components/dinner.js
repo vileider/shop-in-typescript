@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import './GenerateSetOfItems.css';
 import gear from '../images/gear.png'
 import { AccesToServerPath } from '../maintence/AccesToServerPath';
@@ -7,7 +7,7 @@ import { ProductContext, UpdateContext } from '../App';
 import { GivesNumberOfRequiredList } from './reusableFunctions/GivesListNumber';
 
 
-export const Dinner = function ({ endpoint }) {
+export const Dinner = function ({ endpoint, liftedDinnerChildState }) {
 
     const productsFromContext = useContext(ProductContext)
     const liftedChildState = useContext(UpdateContext)
@@ -19,6 +19,7 @@ export const Dinner = function ({ endpoint }) {
     }
 
     const removeItemFromDatabase = async (itemName) => {
+        console.log(itemName)
         const resolve = await fetch(`${AccesToServerPath()}deleteItem`,
             {
                 method: 'POST',
@@ -59,7 +60,8 @@ export const Dinner = function ({ endpoint }) {
         visibilityOfEachListObjectUpdate = async (event, productObject, demandedItems) => {
             const ingredientsFromDatabase =
                 await readIngredientsDataFromDatabase(demandedItems)
-            liftedChildState((productsFromContext[GivesNumberOfRequiredList(endpoint)].map(x => {
+            console.log(ingredientsFromDatabase)
+            liftedDinnerChildState((productsFromContext[GivesNumberOfRequiredList(endpoint)].map(x => {
                 if (x.product === productObject) {
                     x.visibilityOnProductList = false;
                     x.ingredientsDeveloped = ingredientsFromDatabase
