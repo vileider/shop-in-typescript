@@ -23,6 +23,7 @@ export const ProductListDisplay = (
 
 ) => {
     const [reRender, setReRender] = useState(0)
+
     const deleteConfirmation = (itemName: string) => {
         let x = window.confirm(`Are You sure, You want to delete ${itemName}?`)
         x === true && removeItemFromDatabase(itemName)

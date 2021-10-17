@@ -1,14 +1,28 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { ProductContext } from '../App';
 
+
 export const Basket = function (props) {
+
     const productsFromContext = useContext(ProductContext).flat(1)
-    console.log('basket zlo')
+    const [productsOnBasket, setProductsOnBasket] = useState(useContext(ProductContext).flat(1))
+    const consolee = () => {
+        console.log(productsFromContext, productsOnBasket)
+    }
+
+    console.log('basket zlo', useContext(ProductContext).flat(1), productsOnBasket, productsFromContext)
+
     const [basketClassName, setBasketClassName] = useState('productsOnBasketClosed')
-    //const [productsOnBasket, setProductsOnBasket0] = useState()
+
+    //productsOnBasket !== productsFromContext && setProductsOnBasket(productsFromContext)
+    const ustawStan = () => {
+        setProductsOnBasket(productsFromContext)
+    }
+    productsOnBasket !== productsFromContext && ustawStan()
     useEffect(() => {
         console.log('use effect')
-    }, [productsFromContext])
+
+    }, [productsOnBasket])
     const recipeFold = () => {
         (basketClassName === 'productsOnBasketHide')
             ? setBasketClassName('productsOnBasketObject')
@@ -18,6 +32,9 @@ export const Basket = function (props) {
 
 
     }
+
+
+    //productsFromContext && runCalbackInBasket(test)
     const basketListDisplay = () => {
         try {
             // console.log('basket, data from parent', props.dataFromParent)
@@ -43,7 +60,7 @@ export const Basket = function (props) {
     const basketSummary = () => {
         let count = 0
         try {
-            props.dataFromParent.filter(x => {
+            productsFromContext.filter(x => {
                 return x.visibilityOnProductList === false
             }).map(x => count += x.price * x.count)
             return count
@@ -56,7 +73,7 @@ export const Basket = function (props) {
     }
 
     return (<><div className='basketBackground' >
-
+        <button onClick={ustawStan}>123</button>
         <div className={basketClassName}>
 
             {basketListDisplay()}
